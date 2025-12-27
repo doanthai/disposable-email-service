@@ -1,6 +1,6 @@
 {
   "name": "@doanthai/disposable-email-service",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A TypeScript/Node.js library for programmatically generating disposable email addresses and retrieving email content from services like Mail10Min and TempMail. Supports headless browser automation and HTTP/2 APIs.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
