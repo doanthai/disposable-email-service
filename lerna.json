@@ -20,7 +20,7 @@
     "version": {
       "allowBranch": ["main", "master"],
       "conventionalCommits": true,
-      "createRelease": "github"
+      "tagVersionPrefix": "v"
     }
   },
   "packages": ["."]
