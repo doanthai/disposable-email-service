@@ -12,6 +12,9 @@
     "lerna:version": "lerna version",
     "lerna:publish": "lerna publish",
     "lerna:changed": "lerna changed",
+    "release:patch": "lerna version patch",
+    "release:minor": "lerna version minor",
+    "release:major": "lerna version major",
     "lerna:diff": "lerna diff",
     "release": "npm run build && lerna publish",
     "version:check": "node -e \"const v=require('./package.json').version; if(!/^\\d+\\.\\d+\\.\\d+$/.test(v)) { console.error('Invalid version format:', v); process.exit(1); } console.log('Version format OK:', v);\""
