@@ -1,0 +1,9 @@
+# Example .npmrc configuration for GitHub Packages
+# Copy this file to .npmrc and set your GITHUB_TOKEN environment variable
+
+@doanthai:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+
+# Or use a personal access token directly (not recommended for production):
+# //npm.pkg.github.com/:_authToken=your_github_token_here
+

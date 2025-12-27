@@ -100,6 +100,52 @@ Get a list of supported email service URLs.
 - `MAIL10MIN`: Mail10Min service (https://10minutemail.net/)
 - `TEMPMAIL`: TempMail service (https://temp-mail.org/)
 
+## Publishing
+
+This project uses [Lerna](https://lerna.js.org/) for version management and publishing to GitHub Packages.
+
+### Prerequisites
+
+1. Set up GitHub Personal Access Token with `write:packages` permission
+2. Configure authentication in `.npmrc`:
+   ```bash
+   export GITHUB_TOKEN=your_github_token_here
+   ```
+
+### Publishing Commands
+
+```bash
+# Build the project
+npm run build
+
+# Check what packages have changed
+npm run lerna:changed
+
+# Version and publish (interactive)
+npm run lerna:publish
+
+# Or use the release script (build + publish)
+npm run release
+```
+
+### Manual Publishing
+
+If you prefer to publish manually:
+
+```bash
+# Build first
+npm run build
+
+# Then publish using Lerna
+lerna publish
+```
+
+Lerna will:
+- Detect version changes
+- Create git tags
+- Publish to GitHub Packages registry
+- Create GitHub releases (if configured)
+
 ## Contributing
 Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
 
