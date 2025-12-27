@@ -13,7 +13,8 @@
     "lerna:publish": "lerna publish",
     "lerna:changed": "lerna changed",
     "lerna:diff": "lerna diff",
-    "release": "npm run build && lerna publish"
+    "release": "npm run build && lerna publish",
+    "version:check": "node -e \"const v=require('./package.json').version; if(!/^\\d+\\.\\d+\\.\\d+$/.test(v)) { console.error('Invalid version format:', v); process.exit(1); } console.log('Version format OK:', v);\""
   },
   "keywords": [],
   "license": "MIT",
@@ -52,5 +53,6 @@
       ]
     },
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec|e2e))\\.ts?$"
-  }
+  },
+  "gitHead": "6ad12948a4b24d8f468ea7c8017ecd52a3adac77"
 }

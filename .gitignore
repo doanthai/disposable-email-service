@@ -60,3 +60,4 @@ prisma/generator
 
 test.ts
 dist/test.js
+.npmrc

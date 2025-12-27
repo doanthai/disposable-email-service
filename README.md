@@ -102,12 +102,39 @@ Get a list of supported email service URLs.
 
 ## Publishing
 
-This project uses [Lerna](https://lerna.js.org/) for version management and publishing to GitHub Packages.
+This project uses [Lerna](https://lerna.js.org/) for version management and publishing to GitHub Packages with **Semantic Versioning** (x.x.x format).
+
+### Semantic Versioning
+
+This project follows [Semantic Versioning](https://semver.org/) convention:
+- **MAJOR** (x.0.0): Breaking changes
+- **MINOR** (x.y.0): New features (backward compatible)
+- **PATCH** (x.y.z): Bug fixes (backward compatible)
+
+### Conventional Commits
+
+Version bumps are automatically determined based on [Conventional Commits](https://www.conventionalcommits.org/) format:
+
+- `feat:` → **MINOR** version bump (new feature)
+- `fix:` → **PATCH** version bump (bug fix)
+- `BREAKING CHANGE:` or `!` → **MAJOR** version bump (breaking change)
+- `docs:`, `style:`, `refactor:`, `test:`, `chore:` → No version bump (unless manually specified)
+
+**Example commit messages:**
+```
+feat: add new email service support
+fix: resolve cookie handling issue
+feat!: change API signature (BREAKING CHANGE)
+```
 
 ### Prerequisites
 
 1. Set up GitHub Personal Access Token with `write:packages` permission
-2. Configure authentication in `.npmrc`:
+2. Configure authentication:
+   ```bash
+   npm login --scope=@doanthai --registry=https://npm.pkg.github.com
+   ```
+   Or set environment variable:
    ```bash
    export GITHUB_TOKEN=your_github_token_here
    ```
@@ -118,10 +145,13 @@ This project uses [Lerna](https://lerna.js.org/) for version management and publ
 # Build the project
 npm run build
 
+# Check version format (validates x.x.x format)
+npm run version:check
+
 # Check what packages have changed
 npm run lerna:changed
 
-# Version and publish (interactive)
+# Version and publish (interactive - Lerna will suggest version based on commits)
 npm run lerna:publish
 
 # Or use the release script (build + publish)
@@ -141,10 +171,11 @@ lerna publish
 ```
 
 Lerna will:
-- Detect version changes
-- Create git tags
+- Analyze commit messages (Conventional Commits)
+- Automatically suggest version bump (major/minor/patch)
+- Create git tags (format: `@doanthai/disposable-email-service@x.x.x`)
 - Publish to GitHub Packages registry
-- Create GitHub releases (if configured)
+- Update CHANGELOG.md automatically
 
 ## Contributing
 Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.

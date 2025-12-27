@@ -20,7 +20,8 @@
     "version": {
       "allowBranch": ["main", "master"],
       "conventionalCommits": true,
-      "tagVersionPrefix": "v"
+      "tagVersionPrefix": "v",
+      "bump": "auto"
     }
   },
   "packages": ["."]
