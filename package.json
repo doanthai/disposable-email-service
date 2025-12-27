@@ -1,7 +1,7 @@
 {
-  "name": "@threecats2k/disposable-email-service",
+  "name": "@doanthai/disposable-email-service",
   "version": "1.2.2",
-  "description": "Library provide disposable email from Mail10M or TempMail",
+  "description": "A TypeScript/Node.js library for programmatically generating disposable email addresses and retrieving email content from services like Mail10Min and TempMail. Supports headless browser automation and HTTP/2 APIs.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,13 +12,13 @@
   "keywords": [],
   "license": "MIT",
   "author": {
-    "name": "threecats2k",
-    "url": "https://github.com/threecats2k",
-    "email": "threecats2k@gmail.com"
+    "name": "doanthai",
+    "url": "https://github.com/doanthai",
+    "email": "doanquocthai.it@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/threecats2k/disposable-email-service.git"
+    "url": "git+https://github.com/doanthai/disposable-email-service.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
